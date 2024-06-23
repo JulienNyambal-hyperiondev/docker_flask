@@ -10,7 +10,7 @@ services:
   db:
     image: mysql:8.0
     environment:
-      MYSQL_ROOT_PASSWORD:you_cant_crack_this
+      MYSQL_ROOT_PASSWORD: you_cant_crack_this
     volumes:
       - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
     port:
