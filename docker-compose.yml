@@ -1,10 +1,10 @@
 services:
   web:
     build: ./app
-    port:
+    ports:
       - "5000:5000"
     environment:
-      MYSQL_ROOT_PASSWORD=you_cant_crack_this
+      MYSQL_ROOT_PASSWORD: you_cant_crack_this
     depends_on:
       - db
   db:
@@ -13,5 +13,5 @@ services:
       MYSQL_ROOT_PASSWORD: you_cant_crack_this
     volumes:
       - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
-    port:
+    ports:
       - "3306:3306"
